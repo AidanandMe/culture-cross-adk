@@ -1,0 +1,9 @@
+[build]
+  publish = "web"
+  command = "echo 'Static ADK Frontend ready for Netlify'"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

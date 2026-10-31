@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culture Cross: The Ritual Detective | Google ADK</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Decorative Marigold & Autumn Floating Garland -->
+  <div class="garland-bar" aria-hidden="true">
+    <span>🌼</span><span>🎃</span><span>🕯️</span><span>💀</span><span>🍂</span><span>🔍</span><span>🌼</span><span>🎃</span><span>🕯️</span><span>💀</span><span>🍂</span><span>🔍</span>
+  </div>
+
+  <header class="hero-header">
+    <div class="hero-inner">
+      <div class="mascot-badge" title="The Ritual Detective">
+        <!-- Cute Custom SVG Mascot: Detective Hat + Magnifying Glass + Marigold & Lantern -->
+        <svg viewBox="0 0 100 100" class="mascot-svg" role="img" aria-label="Ritual Detective Mascot">
+          <circle cx="50" cy="52" r="42" fill="#2D264B" stroke="#FFB703" stroke-width="3.5" />
+          <!-- Detective Deerstalker Cap -->
+          <path d="M22 36 Q50 12 78 36 Z" fill="#E07A5F" stroke="#1E1B2E" stroke-width="2.5" />
+          <path d="M15 36 Q50 42 85 36" fill="none" stroke="#1E1B2E" stroke-width="3.5" stroke-linecap="round" />
+          <circle cx="50" cy="19" r="4" fill="#FFB703" />
+          <!-- Cute Skull / Lantern Face Split -->
+          <circle cx="50" cy="56" r="24" fill="#FFFDF9" stroke="#1E1B2E" stroke-width="2.5" />
+          <!-- Left Eye: Marigold Star -->
+          <circle cx="40" cy="53" r="5.5" fill="#1E1B2E" />
+          <circle cx="40" cy="53" r="2.2" fill="#FFB703" />
+          <!-- Right Eye: Magnifying Monocle -->
+          <circle cx="60" cy="53" r="7.5" fill="#8ECAE6" fill-opacity="0.35" stroke="#FB8500" stroke-width="3" />
+          <circle cx="60" cy="53" r="4" fill="#1E1B2E" />
+          <line x1="66" y1="58" x2="76" y2="68" stroke="#FB8500" stroke-width="3.5" stroke-linecap="round" />
+          <!-- Cute Nose & Smile -->
+          <polygon points="50,58 47,63 53,63" fill="#E07A5F" />
+          <path d="M41 69 Q50 75 59 69" fill="none" stroke="#1E1B2E" stroke-width="2.5" stroke-linecap="round" />
+          <line x1="46" y1="69" x2="46" y2="73" stroke="#1E1B2E" stroke-width="2" />
+          <line x1="50" y1="70" x2="50" y2="74" stroke="#1E1B2E" stroke-width="2" />
+          <line x1="54" y1="69" x2="54" y2="73" stroke="#1E1B2E" stroke-width="2" />
+        </svg>
+      </div>
+
+      <div class="hero-copy">
+        <div class="tech-pills">
+          <span class="pill pill-adk">⚡ Official Google ADK</span>
+          <span class="pill pill-gemini">✨ Gemini 3 Flash</span>
+          <span class="pill pill-search">🌐 Google Search Grounding</span>
+        </div>
+        <h1>Culture Cross: <span class="accent-gold">The Ritual Detective</span></h1>
+        <p class="subtitle">
+          Investigate cultural similarities, differences &amp; documented historical transmission—starting with
+          <strong>Halloween</strong> and Mexico’s <strong>Día de los Muertos</strong>.
+        </p>
+      </div>
+
+      <div class="connection-box">
+        <label for="adkUrlInput">ADK Backend Server</label>
+        <div class="conn-row">
+          <input id="adkUrlInput" type="text" value="http://127.0.0.1:8000" aria-label="ADK Server URL" />
+          <button id="newSessionBtn" class="btn-secondary" title="Start a fresh ADK session">🔄 New Case</button>
+        </div>
+        <div class="status-line">
+          <span id="statusDot" class="status-dot online"></span>
+          <span id="statusText">Checking ADK agent...</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="workspace-grid">
+    <!-- LEFT COLUMN: Detective Investigation Desk & Chat Stream -->
+    <section class="investigation-column">
+      <!-- Starter Hypothesis Cards -->
+      <div class="starter-tray" id="starterTray">
+        <div class="tray-header">
+          <span class="tray-icon">🔎</span>
+          <div>
+            <h2>Pick a Cultural Case Lead (or write your own hypothesis below)</h2>
+            <p>Each turn runs live Google Search grounding and updates your ADK Session Notebook.</p>
+          </div>
+        </div>
+        <div class="starter-cards">
+          <button class="starter-card" data-prompt="Did Halloween and Mexico's Día de los Muertos originate from the same ancient festival?">
+            <span class="card-emoji">🎃🕯️</span>
+            <div>
+              <strong>Case #1: Shared Ancient Festival?</strong>
+              <span>Did Halloween &amp; Día de los Muertos come from one ancient origin?</span>
+            </div>
+          </button>
+          <button class="starter-card" data-prompt="So, did they merge in some way because of the cultural contact after the so-called 'discovery of the Americas'?">
+            <span class="card-emoji">⛵⛪</span>
+            <div>
+              <strong>Case #2: 16th-Century Transatlantic Contact</strong>
+              <span>How did Spanish Catholic Allhallowtide &amp; Mesoamerican rites intersect?</span>
+            </div>
+          </button>
+          <button class="starter-card" data-prompt="How did the Aztec goddess Mictecacihuatl and José Guadalupe Posada's satire shape modern La Catrina skull imagery?">
+            <span class="card-emoji">💀🌼</span>
+            <div>
+              <strong>Case #3: Skull Iconography &amp; La Catrina</strong>
+              <span>Pre-Hispanic skull motifs vs. 20th-century Mexican political art.</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Investigation Stream -->
+      <div id="chatStream" class="chat-stream">
+        <div class="welcome-card">
+          <div class="welcome-illustration">🕵️‍♀️📜</div>
+          <h3>Welcome to the Ritual Detective Desk!</h3>
+          <p>
+            Submit a hypothesis above or below. Your ADK agent separates findings into four rigorous tiers:
+          </p>
+          <div class="tier-badges">
+            <span class="tier-badge t1">1. Documented Historical Facts</span>
+            <span class="tier-badge t2">2. Cultural Similarities</span>
+            <span class="tier-badge t3">3. Scholarly Interpretations</span>
+            <span class="tier-badge t4">4. Unsupported Claims &amp; Uncertainties</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Follow-Up Selection Bar (Populated dynamically from ADK session.state.suggested_follow_ups) -->
+      <div id="followupBar" class="followup-bar hidden">
+        <div class="followup-title">🧭 <strong>Suggested Follow-Up Leads</strong> (Click a lead to continue in this session):</div>
+        <div id="followupButtons" class="followup-buttons"></div>
+      </div>
+
+      <!-- Hypothesis Composer -->
+      <form id="hypothesisForm" class="composer-bar">
+        <input
+          id="hypothesisInput"
+          type="text"
+          placeholder="Enter a cultural hypothesis, or type 1, 2, or 3 to pick a follow-up lead..."
+          autocomplete="off"
+          required
+        />
+        <button id="submitBtn" type="submit" class="btn-primary">
+          <span>Investigate</span> 🔎
+        </button>
+      </form>
+    </section>
+
+    <!-- RIGHT COLUMN: Inspectable ADK Session State Notebook -->
+    <aside class="notebook-sidebar">
+      <div class="notebook-card">
+        <div class="notebook-header">
+          <div>
+            <span class="notebook-tag">ADK SESSION.STATE</span>
+            <h2>📓 Detective’s Case Notebook</h2>
+          </div>
+          <span id="sessionIdBadge" class="session-badge" title="Active ADK Session ID">Session: --</span>
+        </div>
+
+        <!-- Live Counters Calculated from ADK Session State -->
+        <div class="metrics-grid">
+          <div class="metric-tile">
+            <span class="metric-value" id="metricTurn">0</span>
+            <span class="metric-label">Session Turn</span>
+          </div>
+          <div class="metric-tile">
+            <span class="metric-value" id="metricHypotheses">0</span>
+            <span class="metric-label">Hypotheses Tested</span>
+          </div>
+          <div class="metric-tile">
+            <span class="metric-value" id="metricSources">0</span>
+            <span class="metric-label">Retrieved Sources</span>
+          </div>
+        </div>
+
+        <!-- Active Hypothesis -->
+        <div class="notebook-section">
+          <h3>🎯 Active Investigation Lead</h3>
+          <div id="activeLeadBox" class="notebook-empty">No hypothesis submitted yet.</div>
+        </div>
+
+        <!-- Session Hypothesis History -->
+        <div class="notebook-section">
+          <h3>🧭 Session Investigation History</h3>
+          <ul id="historyList" class="notebook-list">
+            <li class="notebook-empty">Turns in this session will appear here.</li>
+          </ul>
+        </div>
+
+        <!-- Google Search Grounding Trace -->
+        <div class="notebook-section">
+          <h3>🌐 Google Search Grounding Trace</h3>
+          <ul id="searchTraceList" class="notebook-list">
+            <li class="notebook-empty">Live search queries executed by Gemini will appear here.</li>
+          </ul>
+        </div>
+
+        <!-- Retrieved Grounding Sources -->
+        <div class="notebook-section">
+          <h3>🔗 Retrieved Grounding Sources</h3>
+          <ul id="sourcesList" class="notebook-list sources-scroll">
+            <li class="notebook-empty">Clickable source links from grounding metadata will appear here.</li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
