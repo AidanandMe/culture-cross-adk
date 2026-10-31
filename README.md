@@ -1,5 +1,8 @@
 # Culture Cross: The Ritual Detective 🕵️‍♀️🕯️🎃
 
+🌐 **Live Web UI (Netlify)**: [https://rad-pastelito-91c08b.netlify.app](https://rad-pastelito-91c08b.netlify.app)  
+📦 **GitHub Repository**: [https://github.com/AidanandMe/culture-cross-adk](https://github.com/AidanandMe/culture-cross-adk)
+
 **Culture Cross: The Ritual Detective** is a playful, evidence-grounded educational application built for the **Google AI DevCamp Agentic AI Hackathon**. It investigates cultural similarities, differences, and documented historical transmission between traditions—starting with **Halloween** and Mexico's **Día de los Muertos**.
 
 Rather than treating cultural overlap as simple equivalence, the agent acts as a historical and anthropological investigator: formulating targeted web searches, separating documented historical transmission from parallel motifs and misconceptions, preserving source provenance, and maintaining a multi-turn **Cultural Investigation Notebook** in **Google ADK session state**.
